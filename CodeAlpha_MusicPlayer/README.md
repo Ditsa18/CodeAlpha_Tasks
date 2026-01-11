@@ -4,11 +4,11 @@ A premium, interactive music player with a dynamic UI that switches between Ligh
 
 ## 🌓 Interface Preview
 
-| Light Mode | Dark Mode |
-| <img width="1861" height="910" alt="Screenshot 2026-01-12 023028" src="https://github.com/user-attachments/assets/30cf5534-b8dd-463e-9aa6-a9223a22c845" />
- | <img width="1861" height="888" alt="Screenshot 2026-01-12 023050" src="https://github.com/user-attachments/assets/0159a32e-c26f-4ce2-a5d2-f6279012a67b" />
- |
-|  |  |
+Light Mode  
+<img width="1861" height="910" alt="Screenshot 2026-01-12 023028" src="https://github.com/user-attachments/assets/30cf5534-b8dd-463e-9aa6-a9223a22c845" />
+ Dark Mode 
+ <img width="1861" height="888" alt="Screenshot 2026-01-12 023050" src="https://github.com/user-attachments/assets/0159a32e-c26f-4ce2-a5d2-f6279012a67b" />
+ 
 
 ---
 
