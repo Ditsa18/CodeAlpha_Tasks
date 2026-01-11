@@ -1,0 +1,161 @@
+/* ---------- ROOT VARIABLES ---------- */
+:root {
+  --bg-gradient: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+
+  --card-bg: rgba(255, 255, 255, 0.45);
+  --display-bg: rgba(255, 255, 255, 0.65);
+
+  --text-main: #334155;
+  --text-muted: #64748b;
+
+  --number-btn: rgba(255, 255, 255, 0.85);
+  --operator-btn: #dbeafe;
+  --equals-btn: #c7b7ff;
+  --clear-btn: #fca5a5;
+  --delete-btn: #fed7aa;
+}
+
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-gradient);
+}
+
+.wrapper {
+  text-align: center;
+}
+
+/* ---------- TITLE ---------- */
+.title {
+  margin-bottom: 16px;
+  font-size: 26px;
+  font-weight: 700;
+  color: #475569;
+}
+
+/* ---------- CALCULATOR ---------- */
+.calculator {
+  width: 100%;
+  max-width: 360px;
+  padding: 22px;
+  border-radius: 24px;
+  background: var(--card-bg);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 25px 40px rgba(0,0,0,0.15);
+}
+
+/* ---------- TOP CONTROLS ---------- */
+.top-controls {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.top-controls button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--text-muted);
+}
+
+/* ---------- DISPLAY ---------- */
+.display {
+  background: var(--display-bg);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 22px;
+  box-shadow: inset 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#expression {
+  font-size: 14px;
+  color: var(--text-muted);
+  text-align: right;
+  margin-bottom: 6px;
+}
+
+#result {
+  width: 100%;
+  font-size: 30px;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: right;
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+/* ---------- BUTTON GRID ---------- */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+/* ---------- BUTTONS ---------- */
+.buttons button {
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: var(--number-btn);
+  color: var(--text-main);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transition: transform 0.15s ease;
+}
+
+.buttons button:hover {
+  transform: translateY(-2px);
+}
+
+.buttons button:active {
+  transform: scale(0.94);
+}
+
+/* ---------- SPECIAL COLORS ---------- */
+.buttons button.operator {
+  background: var(--operator-btn) !important;
+  font-weight: 600;
+}
+
+.buttons button.equals {
+  background: var(--equals-btn) !important;
+  font-weight: 700;
+}
+
+.buttons button.clear {
+  background: var(--clear-btn) !important;
+  font-weight: 700;
+}
+
+.buttons button.delete {
+  background: var(--delete-btn) !important;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 420px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .buttons button {
+    padding: 15px;
+    font-size: 16px;
+  }
+}

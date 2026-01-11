@@ -1,0 +1,252 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to right top,
+    #ffd2ba, #ffd5a8, #fbdb96, #eae489,
+    #cfee84, #a1ef95, #6cedae, #00e9ca,
+    #00d5ee, #00bcff, #009aff, #876dec
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; 
+}
+
+/* ================= PLAYER ================= */
+.player {
+  width: 380px;
+  position: relative; 
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(24px);
+  border-radius: 28px;
+  padding: 26px;
+  text-align: center;
+  box-shadow: 0 30px 70px rgba(0,0,0,.28);
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background-image: linear-gradient(
+    to right top,
+    #0a090a, #1b141d, #261c30, #2d2646,
+    #2f315d, #31376e, #313e80, #2f4593,
+    #3f46a1, #5146ae, #6644b9, #7c40c3
+  );
+}
+
+body.dark .player {
+  background: rgba(20,20,40,.65);
+}
+
+body.dark h2,
+body.dark p {
+  color: #e5e7eb;
+}
+/* ================= DARK MODE ICON & TIME FIX ================= */
+
+body.dark .time {
+  color: #f3f4f6;
+}
+
+body.dark .volume i {
+  color: #f3f4f6;
+}
+
+body.dark .controls i {
+  color: #e5e7eb;
+}
+
+body.dark .controls .fa-play,
+body.dark .controls .fa-pause {
+  color: #fff;
+}
+
+body.dark #current,
+body.dark #duration {
+  color: #f3f4f6;
+}
+
+/* ================= THEME TOGGLE ================= */
+.theme-toggle {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.65);
+  cursor: pointer;
+  z-index: 20; /* 🔥 fixes hidden issue */
+}
+
+body.dark .theme-toggle {
+  background: rgba(0,0,0,.45);
+  color: #fff;
+}
+
+/* ================= COVER ================= */
+.cover-wrapper {
+  position: relative;
+}
+
+.cover {
+  width: 100%;
+  border-radius: 22px;
+}
+
+.playing .cover {
+  animation: spin 8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ================= SOUND BARS ================= */
+.bars {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 4px;
+}
+
+.bars span {
+  width: 4px;
+  height: 10px;
+  background: #4338ca;
+  border-radius: 4px;
+  animation: bounce 1s infinite ease-in-out;
+  animation-play-state: paused;
+}
+
+.playing .bars span {
+  animation-play-state: running;
+}
+
+.bars span:nth-child(2){animation-delay:.2s}
+.bars span:nth-child(3){animation-delay:.4s}
+.bars span:nth-child(4){animation-delay:.6s}
+
+@keyframes bounce {
+  50% { height: 22px; }
+}
+
+/* ================= TEXT ================= */
+h2 {
+  font-size: 22px;
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 14px;
+}
+
+/* ================= PROGRESS ================= */
+.progress-container {
+  height: 8px;
+  background: rgba(255,255,255,.7);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 14px 0;
+}
+
+.progress {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(to right,#876dec,#00bcff);
+}
+
+/* ================= TIME ================= */
+.time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  margin: 22px 0;
+}
+
+.controls i {
+  cursor: pointer;
+  color: #4338ca;
+}
+
+/* PERFECT CIRCLE PLAY BUTTON */
+.controls .fa-play,
+.controls .fa-pause {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border-radius: 50%;
+  background: linear-gradient(to right,#876dec,#00bcff);
+  color: #fff;
+}
+
+/* ================= VOLUME ================= */
+.volume {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ================= PLAYLIST ================= */
+.playlist {
+  margin-top: 18px;
+  list-style: none;
+  max-height: 140px;
+  overflow-y: auto;
+  padding-right: 6px; 
+}
+
+.playlist::-webkit-scrollbar {
+  width: 6px;
+}
+
+.playlist::-webkit-scrollbar-thumb {
+  background: rgba(67,56,202,.45);
+  border-radius: 10px;
+}
+
+.playlist li {
+  padding: 12px;
+  border-radius: 14px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  background: rgba(255,255,255,.4);
+}
+
+.playlist li.active {
+  background: linear-gradient(
+    to right,
+    rgba(135,109,236,.35),
+    rgba(0,188,255,.35)
+  );
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 420px) {
+  .player { width: 92%; }
+}
