@@ -1,0 +1,1 @@
+Welcome to my CodeAlpha Internship repository. This project contains a collection of frontend web development tasks completed during my internship. Each task focuses on different aspects of HTML, CSS, and JavaScript, ranging from responsive design to dynamic functionality.
